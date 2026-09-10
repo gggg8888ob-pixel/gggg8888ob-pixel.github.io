@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL // Mohammad-Matin Momeni</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --term-bg: #0d1117;
+            --primary: #00ff66;
+            --accent: #00e5ff;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 700px;
+            background-color: var(--term-bg);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background-color: #161b22;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #30363d;
+            dir: ltr;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .close { background-color: #ff5f56; }
+        .minimize { background-color: #ffbd2e; }
+        .maximize { background-color: #27c93f; }
+
+        .title {
+            color: var(--muted);
+            font-size: 12px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .prompt {
+            color: var(--primary);
+            dir: ltr;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .prompt span {
+            color: var(--accent);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed var(--primary);
+            padding-bottom: 5px;
+        }
+
+        .bio {
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .section-title {
+            color: var(--accent);
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-right: 15px;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        ul li::before {
+            content: ">";
+            color: var(--primary);
+            position: absolute;
+            right: -15px;
+        }
+
+        .skills-tag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .tag {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .links {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            dir: ltr;
+        }
+
+        .link-btn {
+            color: var(--primary);
+            text-decoration: none;
+            border: 1px solid var(--primary);
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .link-btn:hover {
+            background-color: var(--primary);
+            color: var(--bg-color);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: var(--primary);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="buttons">
+                <div class="btn close"></div>
+                <div class="btn minimize"></div>
+                <div class="btn maximize"></div>
+            </div>
+            <div class="title">bash - 80x24</div>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">root@system:~# <span>./fetch_profile.sh</span></div>
+            
+            <h1>محمد متین مومنی</h1>
+            <p class="bio">توسعه‌دهنده علاقه‌مند به تکنولوژی، برنامه‌نویسی و طراحی صنعتی.</p>
+
+            <div class="section-title">[ مهارت‌های اصلی ]</div>
+            <div class="skills-tag">
+                <span class="tag">Python</span>
+                <span class="tag">SolidWorks</span>
+                <span class="tag">Hardware Repair</span>
+                <span class="tag">Linux</span>
+            </div>
+
+            <div class="section-title">[ مشخصات ]</div>
+            <ul>
+                <li>سن: ۱۶ سال</li>
+                <li>حوزه فعالیت: توسعه نرم‌افزار و طراحی قطعات</li>
+                <li>وضعیت: در حال یادگیری و اجرای پروژه‌های جدید</li>
+            </ul>
+
+            <div class="links">
+                <a href="https://github.com/gggg8888ob-pixel" class="link-btn" target="_blank">GitHub</a>
+            </div>
+
+            <div class="prompt" style="margin-top: 20px;">root@system:~# <span class="cursor"></span></div>
+        </div>
+    </div>
+
+</body>
+</html>
